@@ -13,7 +13,13 @@ namespace HowManyEggsToLay
             Egg[] eggs = new Egg[numberOfEggs];
             for (int i = 0; i < numberOfEggs; i++)
             {
-                eggs[i] = new Egg(Bird.Randomizer.NextDouble() + 12, "speckled");
+                if (Bird.Randomizer.Next(4) == 0)
+
+                    eggs[i] = new BrokenEgg("speckled");
+
+                else
+
+                    eggs[i] = new Egg(Bird.Randomizer.NextDouble() * 2 + 1, "speckled");
             }
             return eggs;
         }
